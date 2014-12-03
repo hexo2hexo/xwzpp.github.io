@@ -5,6 +5,8 @@ production_url: http://xwnjnu.github.io
 #
 #rdiscount解析器对于嵌入html javascript代码,为文章增加特定效果兼容较好
 markdown: rdiscount
+gems:
+- rouge
 rdiscount:
   extensions: [  "autolink", ]
 markdown_ext:  markdown,mkd,mkdn,md
