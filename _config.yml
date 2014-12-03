@@ -8,7 +8,7 @@ markdown: rdiscount
 rdiscount:
   extensions: [  "autolink", ]
 markdown_ext:  markdown,mkd,mkdn,md
-highlighter: pygments
+highlighter: rouge
 permalink: /:categories/:title.html
 paginate: 7
 paginate_path: "page/:num"
