@@ -3,7 +3,7 @@ layout: post
 title:	如何在博客中插入虾米播放器
 description: "在博客中插入虾米播放器"
 category: project
-avatarimg: "/img/touxiang.jpg"
+avatarimg: "/img/insert-xiami-to-blog/touxiang.jpg"
 tags : [blog,xiami]
 duoshuo: true
 ---
