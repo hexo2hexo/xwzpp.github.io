@@ -7,10 +7,10 @@ permalink: rss.xml
 <feed xmlns="http://www.w3.org/2005/Atom">
 
     <title>一丝微凉</title>
-    <link href="http://xwnjnu.github.io/rss.xml" rel="self"/>
-    <link href="http://xwnjnu.github.io/"/>
+    <link href="http://pisxw.com/rss.xml" rel="self"/>
+    <link href="http://pisxw.com/"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    <id>http://xwnjnu.github.io/</id>
+    <id>http://pisxw.com/</id>
     <author>
         <name>xwnjnu</name>
         <email>xwnjnu@gmail.com</email>
@@ -21,7 +21,7 @@ permalink: rss.xml
         <title>{{ post.title | xml_escape }}</title>
         <link href="http://xwnjnu.github.io{{ post.url }}"/>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
-        <id>http://xwnjnu.github.io/{{ post.id }}</id>
+        <id>http://pisxw.com/{{ post.id }}</id>
         <content type="html">{{ post.content | xml_escape }}</content>
         <summary type="html">{{ post.content | xml_escape }}</summary>
     </entry>
