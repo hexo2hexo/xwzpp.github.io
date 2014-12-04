@@ -7,7 +7,7 @@ avatarimg: "/img/leet-code/touxiang.png"
 tags : [leetcode,Array,HashTable]
 duoshuo: true
 ---
-##题目:
+##题目
 ####Two Sum
 	
 >	Given an array of integers, find two numbers such that they add up to a specific target number.
