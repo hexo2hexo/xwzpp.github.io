@@ -20,3 +20,7 @@ future: true
 lsi:      false
 #禁用定制插件
 safe:     false
+author:
+    douban:
+        name: 114349615                                            
+        key: 0b39d69805f0c92f21ad83c811d25b8d                                    
