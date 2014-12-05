@@ -4,11 +4,23 @@ title: 全站搜索
 permalink: search/
 ---
 
-<script src="/js/min/jquery.search.js" ></script>
-
-<i class="label label-danger">目前不支持中文搜索，但支持英文搜索</i>
-
-<div id="search_results"></div>
+<div id="ts-results-container"></div>
 <script>
-    $('#search_results').tapir({'token': '534e874bdc0c060200000003'});
+var option = {
+  engineKey: '24cbe52cd74a4641366c',
+  resultContainingElement: '#ts-results-container',
+  renderStyle: 'new_page',
+  resultPageURL: '/search.html'
+};
+(function(w,d,t,u,n,s,e){
+  s = d.createElement(t);
+  s.src = u;
+  s.async = 1;
+  w[n] = function(r){
+    w[n].opts = r;
+  };
+  e = d.getElementsByTagName(t)[0];
+  e.parentNode.insertBefore(s, e);
+})(window,document,'script','//tinysou-cdn.b0.upaiyun.com/ts.js','_ts');
+_ts(option);
 </script>
