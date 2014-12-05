@@ -326,6 +326,7 @@ a.pagination-item:hover {
     background: rgb(61, 79, 93);
     border: 2px solid rgb(176, 202, 219);
     margin: 20px 0;
+	margin-bottom:10px;
     padding: 5px 0 5px 0px;
     width: 200px;
     color: #ffffff;
