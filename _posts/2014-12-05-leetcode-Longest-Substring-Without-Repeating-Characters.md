@@ -53,7 +53,7 @@ public class Solution {
             }
             maxsublength=Math.max(maxsublength,i-barrier+1);
         }
-        return maxsublength;     
+        return maxsublength;
     }
 }
 {% endhighlight %}
