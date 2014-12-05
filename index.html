@@ -18,6 +18,9 @@ tags : [ 原创 ,博客,技术博文,一丝微凉]
                     class="post-categorybut " href="/type/#{{ post.categories  }}">{{ post.categories  }}</a><a
                     class="post-category " > {{ post.tags | first }}</a><a
                     class="post-category " >  {{ post.tags[1] }}</a>
+					{% for tag in post.tags %}
+					<a class="post-category " >  {{ tag }}</a>
+					{% endfor %}
             </p>
         </header>
 
