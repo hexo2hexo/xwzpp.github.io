@@ -4,7 +4,7 @@ title:  LeetCode-TwoSum
 description: "two sum"
 category: algorithm
 avatarimg: "/img/leet-code/touxiang.png"
-tags : [leetcode,Array,HashTable]
+tags : [leetcode,Array,Hash Table]
 duoshuo: true
 ---
 ##题目
