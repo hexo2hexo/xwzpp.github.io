@@ -10,7 +10,7 @@ layout: blog
 
     <p class="post-meta">By {{ page.date | date: "%m" }}月{{ page.date | date: "%d" }}日  {{ page.date | date: "%Y" }}  
 	<a class="post-categorybut " href="/type/#{{ post.categories  }}">{{ page.categories  }}</a>
-	{% for tag in post.tags %}
+	{% for tag in page.tags %}
 		<a class="post-category " href="/tag/#{{ tag }}">  {{ tag }}</a>
 	{% endfor %}
     </p>
