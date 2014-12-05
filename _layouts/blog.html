@@ -74,7 +74,7 @@
                         <a class="pure-button" href="/read">阅读站</a>
                     </li>
                     <li class="nav-item">
-                        <a class="pure-button" href="/1">音乐屋</a>
+                        <a class="pure-button" href="/search">音乐屋</a>
 
                 </ul>
             </nav>
@@ -124,23 +124,4 @@
 </div>
 
 </body>
-<script>
-	var option = {
-	  engineKey: '24cbe52cd74a4641366c',
-	  resultContainingElement: '#ts-results-container',
-	  renderStyle: 'new_page',
-	  resultPageURL: '/search'
-	};
-	(function(w,d,t,u,n,s,e){
-	  s = d.createElement(t);
-	  s.src = u;
-	  s.async = 1;
-	  w[n] = function(r){
-		w[n].opts = r;
-	  };
-	  e = d.getElementsByTagName(t)[0];
-	  e.parentNode.insertBefore(s, e);
-	})(window,document,'script','//tinysou-cdn.b0.upaiyun.com/ts.js','_ts');
-	_ts(option);
-</script>
 </html>
