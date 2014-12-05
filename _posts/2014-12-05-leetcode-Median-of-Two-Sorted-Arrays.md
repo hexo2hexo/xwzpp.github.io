@@ -22,39 +22,39 @@ duoshuo: true
 ##算法代码
 代码采用JAVA实现：
 {% highlight java %}
-	public class Solution {  
-	    //as表示A的重新起点，bs表示B的重新起点  
-	    double findKth(int A[],int as,int m,int B[],int bs,int n,int k)
-	    {
-	        if(m==0)
-	            return B[bs+k-1];
-	        if(n==0)
-	            return A[as+k-1];
-	        if(m>n)
-	            return findKth(B,bs,n,A,as,m,k);
-	        if(k==1)
-	            return Math.min(A[as],B[bs]);
-	        int pa=Math.min((k+1)/2,m),pb=k-pa;
-	        if(A[as+pa-1]<B[bs+pb-1])
-	            return findKth(A,as+pa,m-pa,B,bs,n,k-pa);
-	        else {
-	            if(A[as+pa-1]>B[bs+pb-1])
-	                return findKth(A,as,m,B,bs+pb,n-pb,k-pb);
-	             else 
-	                return A[as+pa-1];
-	        }
-	        
-	    }
-	    
-	    public double findMedianSortedArrays(int A[], int B[]) {
-	        int m=A.length;
-	        int n=B.length;
-	        int s=m+n;
-	        if(s%2==1)
-	            return findKth(A,0,m,B,0,n,s/2+1);
-	        else
-	            return (findKth(A,0,m,B,0,n,s/2)+findKth(A,0,m,B,0,n,s/2+1))/2;
-	    }
-	}
+public class Solution {  
+    //as表示A的重新起点，bs表示B的重新起点  
+    double findKth(int A[],int as,int m,int B[],int bs,int n,int k)
+    {
+        if(m==0)
+            return B[bs+k-1];
+        if(n==0)
+            return A[as+k-1];
+        if(m>n)
+            return findKth(B,bs,n,A,as,m,k);
+        if(k==1)
+            return Math.min(A[as],B[bs]);
+        int pa=Math.min((k+1)/2,m),pb=k-pa;
+        if(A[as+pa-1]<B[bs+pb-1])
+            return findKth(A,as+pa,m-pa,B,bs,n,k-pa);
+        else {
+            if(A[as+pa-1]>B[bs+pb-1])
+                return findKth(A,as,m,B,bs+pb,n-pb,k-pb);
+             else 
+                return A[as+pa-1];
+        }
+        
+    }
+    
+    public double findMedianSortedArrays(int A[], int B[]) {
+        int m=A.length;
+        int n=B.length;
+        int s=m+n;
+        if(s%2==1)
+            return findKth(A,0,m,B,0,n,s/2+1);
+        else
+            return (findKth(A,0,m,B,0,n,s/2)+findKth(A,0,m,B,0,n,s/2+1))/2;
+    }
+}
 {% endhighlight %}
 
