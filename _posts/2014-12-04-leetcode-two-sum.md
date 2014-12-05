@@ -31,25 +31,25 @@ duoshuo: true
 代码采用JAVA实现：
 
 {% highlight java  %}   
-	public class Solution {  
-	    public int[] twoSum(int[] numbers, int target) {  
-	   		HashMap<Integer,Integer> map=new HashMap<Integer,Integer>();  
-	        for(int i=0;i<numbers.length;i++)   
-	        {  
-	            map.put(numbers[i],i);  
-	        }  
-	        for(int i=0;i<numbers.length;i++)  
-	        {  
-	            int cha=target-numbers[i];  
-	            Integer v=map.get(cha);  
-	            if(v!=null&&v!=i)  
-	            {  
-	               return new int[]{i+1,v+1};   
-	            }  
-	        }  
-	        return new int[]{-1,-1};   
-	    }  
-	}  
+public class Solution {  
+    public int[] twoSum(int[] numbers, int target) {  
+   		HashMap<Integer,Integer> map=new HashMap<Integer,Integer>();  
+        for(int i=0;i<numbers.length;i++)   
+        {  
+            map.put(numbers[i],i);  
+        }  
+        for(int i=0;i<numbers.length;i++)  
+        {  
+            int cha=target-numbers[i];  
+            Integer v=map.get(cha);  
+            if(v!=null&&v!=i)  
+            {  
+               return new int[]{i+1,v+1};   
+            }  
+        }  
+        return new int[]{-1,-1};   
+    }  
+}  
 {% endhighlight %}
 
 
