@@ -324,10 +324,10 @@ a.pagination-item:hover {
 .search form INPUT[type="text"] {
    // background: #2d3339;
     background: rgb(61, 79, 93);
-    border: 1;
+    border: 2px solid rgb(176, 202, 219);
     margin: 20px 0;
     padding: 5px 0 5px 0px;
-    width: 180px;
+    width: 200px;
     color: #ffffff;
 }
 .header a{
