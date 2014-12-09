@@ -10,7 +10,7 @@ duoshuo: true
 ##题目
 ####Regular Expression Matching
 >mplement regular expression matching with support for '.' and '*'.
-
+```
 	'.' Matches any single character.
 	'*' Matches zero or more of the preceding element.
 
@@ -27,7 +27,7 @@ duoshuo: true
 	isMatch("aa", ".*") → true
 	isMatch("ab", ".*") → true
 	isMatch("aab", "c*a*b") → true
-
+```
 <!-- more -->
 
 ##解题思路
