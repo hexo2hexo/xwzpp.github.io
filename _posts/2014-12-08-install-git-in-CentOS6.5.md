@@ -3,7 +3,7 @@ layout: post
 title:  CentOS6.5 安装git
 description: "CentOS6.5 安装git"
 category: project
-avatarimg: "/img/touxiang.png"
+avatarimg: "/img/touxiang.jpg"
 tags : [blog,git]
 duoshuo: true
 ---
