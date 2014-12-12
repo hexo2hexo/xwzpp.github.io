@@ -25,9 +25,9 @@ duoshuo: true
 		if c 为（，{，[  then stack.push(c);
 		if c 为 ), }, ]	then 判定stack是否为空和stack.top是否与c相匹配。
 
-
 ##算法代码
 代码采用JAVA实现：
+{% highlight java %}
 public class Solution {
 	//利用数组栈来求解问题
     public boolean isValid(String s) {
@@ -74,4 +74,4 @@ public class Solution {
         	return false;
     }
 }
-{% endhighlight %}l
+{% endhighlight %}
