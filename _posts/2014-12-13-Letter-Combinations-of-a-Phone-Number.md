@@ -148,4 +148,6 @@ public class Solution {
 }
 {% endhighlight %}
 
+[1]:/img/Letter-Combinations-of-a-Phone-Number/Phone.png
+
 
