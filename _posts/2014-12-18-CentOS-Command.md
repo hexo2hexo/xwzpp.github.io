@@ -3,7 +3,7 @@ layout: post
 title:  CentOS 常用命令及快捷键整理
 description: "CentOS 常用命令及快捷键整理"
 category: project
-avatarimg: "/img/touxiang.png"
+avatarimg: "/img/touxiang.jpg"
 tags : [Linux,CentOS]
 duoshuo: true
 ---
