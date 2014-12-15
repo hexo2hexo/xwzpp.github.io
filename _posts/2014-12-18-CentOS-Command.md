@@ -8,7 +8,7 @@ tags : [Linux,CentOS]
 duoshuo: true
 ---
 ##引言
-最近用linux的比较多，主要用的linux distributions是CentOS.因此这里将CentOS中常用的命令和快捷键进行了整理。
+最近用`linux`的比较多，主要用的`linux distributions`是`CentOS`.因此这里将`CentOS`中常用的命令和快捷键进行了整理。
 
 <!-- more -->
 
