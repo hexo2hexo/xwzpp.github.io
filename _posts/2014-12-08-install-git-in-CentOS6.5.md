@@ -4,7 +4,7 @@ title:  CentOS6.5 安装git
 description: "CentOS6.5 安装git"
 category: project
 avatarimg: "/img/touxiang.jpg"
-tags : [blog,git]
+tags : [Linux,CentOS,Git]
 duoshuo: true
 ---
 ##引言
