@@ -12,7 +12,7 @@ duoshuo: true
 
 <!-- more -->
 
-##常用命令--文件和目录
+##文件和目录
 	# cd /home                        进入 '/home' 目录
 	
 	# cd ..                           返回上一级目录
@@ -49,7 +49,7 @@ duoshuo: true
 	
 	# rm -rf dir1                     删除 'dir1' 目录及其子目录内容
 
-##常用命令--查看文件内容
+##查看文件内容
 	# cat file1                       从第一个字节开始正向查看文件的内容
 	
 	# head -2 file1                   查看一个文件的前两行 
@@ -60,7 +60,7 @@ duoshuo: true
 	
 	# tail -3 file1                   查看一个文件的最后三行
 
-##常用命令--文本处理
+##文本处理
 
 	# grep str /tmp/test              在文件 '/tmp/test' 中查找 "str"
 	
@@ -74,7 +74,7 @@ duoshuo: true
 	
 	# sdiff file1 file2               以对比的方式显示两个文件的不同
 
-##常用命令--查找
+##查找
 	# find / -name file1              从 '/' 开始进入根文件系统查找文件和目录
 	
 	# find / -user user1              查找属于用户 'user1' 的文件和目录
@@ -93,7 +93,7 @@ duoshuo: true
 	
 	# find -maxdepth 1 -type f | xargs grep -F 'expr'   在当前目录中查找 'expr'
 
-##常用命令--压缩和解压
+##压缩和解压
 	# bzip2 file1                            压缩 file1
 
 	# bunzip2 file1.bz2                      解压 file1.bz2
@@ -124,7 +124,7 @@ duoshuo: true
 	
 	# unzip test.zip -d /tmp/                解压一个zip格式的压缩包到 /tmp 目录
 
-##常用命令--yum工具
+##yum工具
 	# yum -y install [package]               下载并安装一个rpm包
 	
 	# yum localinstall [package.rpm]         安装一个rpm包，使用你自己的软件仓库解决所有依赖关系
@@ -145,7 +145,7 @@ duoshuo: true
 	
 	# yum clean all                          删除所有缓存的包和头文件
 
-##常用命令--网络
+##网络
 	# ifconfig eth0                                                                       显示一个以太网卡的配置
 	
 	# ifconfig eth0 192.168.1.1 netmask 255.255.255.0   配置网卡的IP地址
@@ -160,7 +160,7 @@ duoshuo: true
 	
 	# ip addr show                                      显示网卡的IP地址
 
-##常用命令--其他
+##其他
 	# su -                            切换到root权限（与su有区别）
 
 	# shutdown -h now                 关机
