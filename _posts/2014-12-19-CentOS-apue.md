@@ -3,7 +3,7 @@ layout: post
 title:  CentOS下配置"Unix环境高级编程第三版"中的apue.h
 description: "CentOS下配置<<Unix环境高级编程第三版>>中的apue.h"
 category: project
-avatarimg: "/img/touxiang.png"
+avatarimg: "/img/touxiang.jpg"
 tags : [apue,CentOS]
 duoshuo: true
 ---

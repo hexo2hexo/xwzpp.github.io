@@ -3,7 +3,7 @@ layout: post
 title:  CentOS6.5使用YUM安装Adobe Flash Player
 description: "CentOS6.5使用YUM安装Adobe Flash Player"
 category: project
-avatarimg: "/img/touxiang.png"
+avatarimg: "/img/touxiang.jpg"
 tags : [Linux,CentOS]
 duoshuo: true
 ---
