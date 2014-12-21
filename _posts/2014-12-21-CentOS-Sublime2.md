@@ -50,16 +50,16 @@ Sublime编辑器据说也是一种神级编辑器，所以今天就安装试了�
 	TargetEnvironment=Unity
 
 ##Package Control组建安装
-1.按`Ctrl+\``调出`console`
-2.粘贴以下代码到底部命令行并回车：    
+1.按Ctrl+`调出`console`       
+2.粘贴以下代码到底部命令行并回车：         
 
 	import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
 
-3.重启`Sublime Text 2`
-4.如果在`Perferences->package settings`中看到`package control`这一项，则安装成功。
+3.重启`Sublime Text 2`     
+4.如果在`Perferences->package settings`中看到`package control`这一项，则安装成功。   
 
 ##插件安装
-1.按下`Ctrl+Shift+P`调出命令面板
-2.输入`install`调出 `Install Package` 选项并回车，然后在列表中选中要安装的插件。
+1.按下`Ctrl+Shift+P`调出命令面板     
+2.输入`install`调出 `Install Package` 选项并回车，然后在列表中选中要安装的插件。     
 
 [1]:http://www.sublimetext.com/2
