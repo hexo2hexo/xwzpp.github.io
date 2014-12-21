@@ -24,11 +24,11 @@ Sublime编辑器据说也是一种神级编辑器，所以今天就安装试了�
 
 	ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
 				   
-4.建立桌面快捷方式，使用`sublime`新建`sublime.desktop`：    
-
+4.建立桌面快捷方式，使用`sublime`新建`sublime.desktop`：   
+	
 	sublime /usr/share/applications/sublime.desktop
   
- 并在其中加入下面内容：      
+并在其中加入下面内容：      
 
 	[Desktop Entry]
 	Version=1.0
@@ -50,7 +50,7 @@ Sublime编辑器据说也是一种神级编辑器，所以今天就安装试了�
 	TargetEnvironment=Unity
 
 ##Package Control组建安装
-1.按`Ctrl+``调出`console`
+1.按`Ctrl+\``调出`console`
 2.粘贴以下代码到底部命令行并回车：    
 
 	import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())
