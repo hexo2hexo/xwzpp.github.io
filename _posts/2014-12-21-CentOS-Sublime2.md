@@ -1,5 +1,5 @@
 ---
-layyout: post
+layout: post
 title:  CentOS-Sublime2安装
 description: "CentOS Sublime2安装"
 category: project
