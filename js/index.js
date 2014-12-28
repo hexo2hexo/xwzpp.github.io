@@ -6,23 +6,23 @@ $(function(){
             $('.sidebar,.search-query').css({"background-image": "url(/img/0.jpg)"});
             break;
         case 1:
-            $('.sidebar,.search-query').css({  "background": "#1c5461" });
+            $('.sidebar,.search-query').css({"background-image": "url(/img/1.jpg)"});
             break;
         case 2:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            $('.sidebar,.search-query').css({"background-image": "url(/img/2.jpg)"});
             break;
         case 3:
-            $('.sidebar,.search-query').css({  "background": "#273e38" });
+            $('.sidebar,.search-query').css({"background-image": "url(/img/0.jpg)"});
             break;
         case 4:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            $('.sidebar,.search-query').css({"background-image": "url(/img/1.jpg)"});
             //"color": "#ff0011",parseInt(6*Math.random())
             break;
         case 5:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            $('.sidebar,.search-query').css({"background-image": "url(/img/2.jpg)"});
             break;
         case 6:
-            $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
+            $('.sidebar,.search-query').css({"background-image": "url(/img/1.jpg)"});
             break;
 		
     }
