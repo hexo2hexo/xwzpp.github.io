@@ -3,7 +3,7 @@ $(function(){
     var dayweek=new Date().getDay();
     switch (dayweek) {
         case 0:
-            $('.sidebar,.search-query').css({  "background": "#4b4b49" });
+            $('.sidebar,.search-query').css({background-image: url(/img/0.jpg)});
             break;
         case 1:
             $('.sidebar,.search-query').css({  "background": "#1c5461" });
@@ -24,6 +24,7 @@ $(function(){
         case 6:
             $('.sidebar,.search-query').css({  "background": "#3D4F5D" });
             break;
+		
     }
     //主题星期变换颜色结束
     NProgress.start();
