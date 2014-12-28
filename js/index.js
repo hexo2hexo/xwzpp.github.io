@@ -3,7 +3,7 @@ $(function(){
     var dayweek=new Date().getDay();
     switch (dayweek) {
         case 0:
-            $('.sidebar,.search-query').css({  "background": "rgb(61, 79, 93)" });
+            $('.sidebar,.search-query').css({  "background": "#4b4b49" });
             break;
         case 1:
             $('.sidebar,.search-query').css({  "background": "#1c5461" });
