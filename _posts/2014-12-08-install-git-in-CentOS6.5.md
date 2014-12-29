@@ -71,12 +71,16 @@ git push 出错
 
 再次git push，弹出框输入密码，即可提交
 
+####git 原理图片一张：
+![][3]
+
 ##参考文献
 [廖雪峰的git教程] [1]    
 [CentOS 安装git] [2]
 
 [1]: http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
 [2]: http://blog.csdn.net/harith/article/details/17691839
+[3]:/img/CentOS/git.jpg
 
 
 
