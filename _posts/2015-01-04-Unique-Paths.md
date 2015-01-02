@@ -50,3 +50,4 @@ public class Solution {
 }
 {% endhighlight %}
 
+[1]:/img/Unique-Paths/1.png
