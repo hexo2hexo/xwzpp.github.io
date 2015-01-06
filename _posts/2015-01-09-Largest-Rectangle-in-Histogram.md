@@ -30,6 +30,8 @@ duoshuo: true
 
 同理可以求解每个`bar`的右边界位置。这样每个`bar`能形成的最大矩形面积为`height(bar)*(right-left-1)`,整个时间为`O(n)+O(n)+O(n)`,分别为求左边界，求右边界，求最大面积，这样总的时间复杂度为`O(n)`.
 
+下一题[Maximal Rectangle][3]是该题的扩展，该题是其子程序。
+
 ##算法代码
 代码采用JAVA实现：
 {% highlight java %}
@@ -95,4 +97,6 @@ public class Solution {
 }
 {% endhighlight %}
 
-
+[1]:/img/Largest-Rectangle-in-Histogram/1.png
+[2]:/img/Largest-Rectangle-in-Histogram/2.png
+[3]:
