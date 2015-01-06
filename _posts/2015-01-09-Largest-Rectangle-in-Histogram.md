@@ -99,4 +99,4 @@ public class Solution {
 
 [1]:/img/Largest-Rectangle-in-Histogram/1.png
 [2]:/img/Largest-Rectangle-in-Histogram/2.png
-[3]:
+[3]:http://pisxw.com/algorithm/Maximal%20Rectangle.html
