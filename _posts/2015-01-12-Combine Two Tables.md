@@ -45,7 +45,7 @@ duoshuo: true
 代码采用mysql实现：
 {% highlight mysql %}
 # Write your MySQL query statement below
-SELECT `FirstName`, `LastName`, `City`, `State` FROM `Person`
-LEFT JOIN `Address` USING(`PersonId`)
+select FirstName,LastName,City,State from Person
+left join Address using(PersonId)
 {% endhighlight %}
 
