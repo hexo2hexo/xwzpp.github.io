@@ -2,9 +2,9 @@
 layout: post
 title:  LeetCode-Combine Two Tables
 description: "Combine Two Tables"
-category: algorithm
+category: Database
 avatarimg: "/img/leet-code/touxiang.png"
-tags : [leetcode,Database]
+tags : [leetcode]
 duoshuo: true
 ---
 ##题目
