@@ -41,7 +41,7 @@ duoshuo: true
 ##解题思路
 该题是合并两个表，可以通过链接操作。
 
-##算法代码
+##SQL语句
 代码采用mysql实现：
 {% highlight mysql %}
 # Write your MySQL query statement below
