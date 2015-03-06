@@ -93,38 +93,6 @@ public class Solution {
 
 算法的非递归实现：   
 {% highlight java %}
-/**
- * Definition for binary tree
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-public class Solution {
-    public boolean isSymmetric(TreeNode root) {
-    	//判断左右子树是否对称
-    	if(root==null)
-    		return true;
-        return helper(root.left,root.right);
-    }
-
-    public boolean helper(TreeNode left,TreeNode right)
-    {
-    	//结束条件
-    	if(left==null && right!=null)
-    		return false;
-    	if(left!=null && right==null)
-    		return false;
-    	if(left==null && right==null)
-    		return true;
-    	return left.val==right.val && helper(left.left,right.right) && helper(left.right,right.left);
-    }
-}
-
-
-
 //非递归实现
 /**
  * Definition for binary tree
