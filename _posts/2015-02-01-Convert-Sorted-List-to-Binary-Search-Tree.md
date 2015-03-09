@@ -138,7 +138,7 @@ public class Solution {
 }
 {% endhighlight %}
 
-[1]:
+[1]:http://pisxw.com/algorithm/Convert-Sorted-Array-to-Binary-Search-Tree.html
 
 
 
