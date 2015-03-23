@@ -4,7 +4,7 @@ title:  LeetCode-Palindrome Partitioning II
 description: "Palindrome Partitioning II"
 category: algorithm
 avatarimg: "/img/leet-code/touxiang.png"
-tags : [leetcode,Dynamic Programmming]
+tags : [leetcode,Dynamic Programming]
 duoshuo: true
 ---
 ##题目
