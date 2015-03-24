@@ -21,7 +21,7 @@ duoshuo: true
 <!-- more -->
 	
 ##解题思路
-该题挨个分析每个A[i]能trapped water的容量，然后将所有的A[i]的trapped water容量相加即可。
+该题与[Candy][2]类似，挨个分析每个A[i]能trapped water的容量，然后将所有的A[i]的trapped water容量相加即可。
 
 其次，对于每个A[i]能trapped water的容量，取决于A[i]左右两边的高度（可延展）较小值与A[i]的差值，即volume[i] = [min(left[i], right[i]) - A[i]] * 1，这里的1是宽度，如果the width of each bar is 2,那就要乘以2了”
 
@@ -72,3 +72,4 @@ public class Solution {
 {% endhighlight %}
 
 [1]:/img/Trapping-Rain-Water/1.png
+[2]:http://pisxw.com/algorithm/Candy.html
