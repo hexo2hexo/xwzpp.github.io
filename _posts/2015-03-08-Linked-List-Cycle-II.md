@@ -64,6 +64,8 @@ public class Solution {
 }
 {% endhighlight %}
 
+[1]:http://pisxw.com/algorithm/Linked-List-Cycle.html
+
 
 
 
