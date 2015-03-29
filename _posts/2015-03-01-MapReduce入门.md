@@ -106,12 +106,12 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class LogMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
+public class LogMapper extends Mapper<Object, Text, Text, IntWritable> {
 	private final static IntWritable ONE = new IntWritable(1);
 
 	public void map(Object key, Text value, Context context)
 			throws IOException, InterruptedException {
-		String[] line = value.toString().split(&#34;,&#34;);
+		String[] line = value.toString().split(",");
 		if (line.length == 4) {
 			String dId = line[2];
 			context.write(new Text(dId), ONE);
@@ -138,11 +138,11 @@ import java.io.IOException;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class LogReducer&lt;Key&gt; extends
-		Reducer&lt;Key, IntWritable, Key, IntWritable&gt; {
+public class LogReducer extends
+		Reducer<Text, IntWritable, Text, IntWritable> {
 	private IntWritable result = new IntWritable();
 
-	public void reduce(Key key, Iterable&lt;IntWritable&gt; values, Context context)
+	public void reduce(Key key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
 		int sum = 0;
 		for (IntWritable val : values) {
@@ -177,7 +177,7 @@ public class LogJob {
 
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
-		Job job = Job.getInstance(conf, &#34;sum_did_from_log_file&#34;);
+		Job job = Job.getInstance(conf, "sum_did_from_log_file");
 		job.setJarByClass(LogJob.class);
 
 		job.setMapperClass(LogMapper.class);
@@ -332,7 +332,7 @@ public class LogJob {
 
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();
-		Job job = Job.getInstance(conf, &#34;sum_did_from_log_file&#34;);
+		Job job = Job.getInstance(conf, "sum_did_from_log_file");
 		job.setJarByClass(LogJob.class);
 
 		job.setMapperClass(LogMapper.class);
@@ -342,9 +342,9 @@ public class LogJob {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
         //添加MultipleOutputs
-		MultipleOutputs.addNamedOutput(job, &#34;a&#34;, TextOutputFormat.class,Text.class, IntWritable.class);
-		MultipleOutputs.addNamedOutput(job, &#34;b&#34;, TextOutputFormat.class,Text.class, Text.class);
-		MultipleOutputs.addNamedOutput(job, &#34;c&#34;, TextOutputFormat.class,Text.class, Text.class);
+		MultipleOutputs.addNamedOutput(job, "a", TextOutputFormat.class,Text.class, IntWritable.class);
+		MultipleOutputs.addNamedOutput(job, "b", TextOutputFormat.class,Text.class, IntWritable.class);
+		MultipleOutputs.addNamedOutput(job, "c", TextOutputFormat.class,Text.class, IntWritable.class);
 
 		FileInputFormat.addInputPath(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
@@ -367,7 +367,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 
-public class LogReducer extends Reducer&lt;Text, IntWritable, Text, IntWritable&gt; {
+public class LogReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
 	private IntWritable result = new IntWritable();
 
@@ -375,32 +375,32 @@ public class LogReducer extends Reducer&lt;Text, IntWritable, Text, IntWritable&
 
 	@Override
 	public void setup(Context context) throws IOException, InterruptedException {
-		System.out.println(&#34;enter LogReducer:::setup method&#34;);
+		System.out.println("enter LogReducer:::setup method");
 		outputs = new MultipleOutputs(context);
 	}
 
 	@Override
 	public void cleanup(Context context) throws IOException,
 			InterruptedException {
-		System.out.println(&#34;enter LogReducer:::cleanup method&#34;);
+		System.out.println("enter LogReducer:::cleanup method");
 		outputs.close();
 	}
 
-	public void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context)
+	public void reduce(Text key, Iterable<IntWritable> values, Context context)
 			throws IOException, InterruptedException {
-		System.out.println(&#34;enter LogReducer::reduce method&#34;);
+		System.out.println("enter LogReducer::reduce method");
 		int sum = 0;
 		for (IntWritable val : values) {
 			sum += val.get();
 		}
 		result.set(sum);
-		System.out.println(&#34;key: &#34; + key.toString() + &#34; sum: &#34; + sum);
-		if ((sum &lt; 60) &amp;&amp; (sum &gt;= 0)) {
-			outputs.write(&#34;a&#34;, key, sum);
-		} else if (sum &lt; 100) {
-			outputs.write(&#34;b&#34;, key, sum);
+		System.out.println("key: " + key.toString() + " sum: "+ sum);
+		if ((sum < 60) && (sum >= 0)) {
+			outputs.write("a", key, sum);
+		} else if (sum < 100) {
+			outputs.write("b", key, sum);
 		} else {
-			outputs.write(&#34;c&#34;, key, sum);
+			outputs.write("c", key, sum);
 		}
 	}
 }

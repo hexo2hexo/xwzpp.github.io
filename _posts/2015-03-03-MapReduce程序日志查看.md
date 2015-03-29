@@ -35,4 +35,4 @@ duoshuo: true
 
 ## 四、小结
 
-我们可以访问http://localhost:50030查看运行详情。
+我们可以访问http://localhost:50030 查看运行详情。
