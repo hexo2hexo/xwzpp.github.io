@@ -16,7 +16,7 @@ duoshuo: true
 Reducer的数量由HashPartitioner函数getPartition返回值来确定。
 {% highlight java %}
 public int getPartition(K2 key, V2 value, int numReduceTasks) {  
-    return (key.hashCode() &amp; Integer.MAX_VALUE) &amp; numReduceTasks;  
+    return (key.hashCode() & Integer.MAX_VALUE) & numReduceTasks;  
 }  
 {% endhighlight %}
 
@@ -31,7 +31,7 @@ http://blog.csdn.net/csfreebird/article/details/7355282
 
 所以结论如下：
 
-partitioner不会改变reducer的数量，而会决定哪些&lt; key,value&gt;进入哪个组，从而改变reducer处理的数据的量
+partitioner不会改变reducer的数量，而会决定哪些<key,value>进入哪个组，从而改变reducer处理的数据的量
 
 在MapReduce4的基础上，仅仅修改了LogJob.java的一行代码：
 {% highlight java %}
