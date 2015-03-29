@@ -4,7 +4,7 @@ title:  使用HashPartitioner来调节Reducer的计算负载
 description: "使用HashPartitioner来调节Reducer的计算负载"
 category: project
 avatarimg: "/img/touxiang.jpg"
-tags : [Hadoop，Mapreduce]
+tags : [Hadoop,Mapreduce]
 duoshuo: true
 ---
 
