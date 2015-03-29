@@ -43,7 +43,7 @@ public class Solution {
 }
 {% endhighlight %}
 
-[1]:
+[1]:http://pisxw.com/algorithm/Maximum-Subarray.html
 
 
 
