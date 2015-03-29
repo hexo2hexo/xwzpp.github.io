@@ -98,6 +98,7 @@ http://stackoverflow.com/questions/7598422/is-it-better-to-use-the-mapred-or-the
 ![](http://anything-about-doc.qiniudn.com/mapreduce%2F1.jpg)
 这个和Hadoop内部RPC调用时采用的序列化算法有关。
 在com.shiyanlou.mapreduce包下新建一个名为LogMapper的类，代码为：
+
 {% highlight java %}
 	package com.shiyanlou.mapreduce;
 	
@@ -131,6 +132,7 @@ write方法不是一般概念的hasmap添加key,value，而是生成一个新的
 
 ##六、编写简单reducer
 Reduce就是做加和统计，在com.shiyanlou.mapreduce包下新建一个名为LogReducer的类，代码：
+
 {% highlight java %}
 	package com.shiyanlou.mapreduce;
 	
@@ -163,6 +165,7 @@ Reduce就是做加和统计，在com.shiyanlou.mapreduce包下新建一个名为
 然后结果写入到context中。 注意，这里的context是Reducer包的Context。
 
 最后，在com.shiyanlou.mapreduce包下新建一个名为LogJob的类，将初始环境设置好。
+
 {% highlight java %}
 	package com.shiyanlou.mapreduce;
 	
