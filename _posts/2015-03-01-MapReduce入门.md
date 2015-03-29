@@ -292,7 +292,7 @@ gitclone下来源代码，在主文件夹新建一个input文件夹，把源代�
 这里只是概括的介绍主要步骤：
 1. 通过**InputFormat**读取HDFS目录的日志文件的所有行，进行内容分块。然后每个块都会对应一个mapper
 2. 调用每个**Mapper**的map函数， 将内容块的数据按照行变成&lt; key, value&gt;格式，作为参数传递. map函数的代码由程序员自己实现，通常key是数据，value是整数，便于做统计。这样，也就将参数&lt; key, value&gt;改成了另一种符合业务逻辑的&lt; key, value&gt;, 通过Context.write方法写出去，随后会被框架交给Reducer
-3. **Partitioner**目前这个程序中没有实现自己的类，只是简单使用了Reducer，后面会增加这部分的说明
+3. **Container**目前这个程序中没有实现自己的类，只是简单使用了Reducer，后面会增加这部分的说明
 4. 框架会根据key进行分组，组成&lt; key, values&gt;对， 调用**Reducer**的reduce函数，函数接受到Mapper传递来的&lt; key, values&gt;后再做统计
 5. 输出成什么样的格式文件由**OutputFormat**来控制。
 注意上面的几个粗体字，就是5大MapReduce组件。每个组件都是我们可以继承的类，然后MapReduce框架通过多态的方式来回调我们的子类实现的方法。
