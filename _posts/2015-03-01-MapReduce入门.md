@@ -7,11 +7,10 @@ avatarimg: "/img/touxiang.jpg"
 tags : [apue,Hadoop]
 duoshuo: true
 ---
-
-<!-- more -->
-
 ##一、MapReduce介绍
 MapReduce是一种编程模型，用于大规模数据集（大于1TB）的并行运算。概念&#34;Map（映射）&#34;和&#34;Reduce（归约）&#34;，和他们的主要思想，都是从函数式编程语言里借来的，还有从矢量编程语言里借来的特性。他极大地方便了编程人员在不会分布式并行编程的情况下，将自己的程序运行在分布式系统上。 当前的软件实现是指定一个Map（映射）函数，用来把一组键值对映射成一组新的键值对，指定并发的Reduce（归约）函数，用来保证所有映射的键值对中的每一个共享相同的键组。
+
+<!-- more -->
 
 ##二、搭建MapReduce工程
 使用Eclipse创建一个名为MapReduce1的Java Project，在MapReduce1下创建一个名为lib的文件夹，放入hadoop-core-1.2.1.jar（在主文件夹下的Downloads/hadoop-1.2.1文件夹下），并把它添加到Build Path，最后在src下创建一个com.shiyanlou.mapreduce的包。
@@ -99,27 +98,27 @@ http://stackoverflow.com/questions/7598422/is-it-better-to-use-the-mapred-or-the
 这个和Hadoop内部RPC调用时采用的序列化算法有关。
 在com.shiyanlou.mapreduce包下新建一个名为LogMapper的类，代码为：
 {% highlight java %}
-	package com.shiyanlou.mapreduce;
-	
-	import java.io.IOException;
-	
-	import org.apache.hadoop.io.IntWritable;
-	import org.apache.hadoop.io.Text;
-	import org.apache.hadoop.mapreduce.Mapper;
-	
-	public class LogMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
-		private final static IntWritable ONE = new IntWritable(1);
-	
-		public void map(Object key, Text value, Context context)
-				throws IOException, InterruptedException {
-			String[] line = value.toString().split(&#34;,&#34;);
-			if (line.length == 4) {
-				String dId = line[2];
-				context.write(new Text(dId), ONE);
-			}
+package com.shiyanlou.mapreduce;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+public class LogMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
+	private final static IntWritable ONE = new IntWritable(1);
+
+	public void map(Object key, Text value, Context context)
+			throws IOException, InterruptedException {
+		String[] line = value.toString().split(&#34;,&#34;);
+		if (line.length == 4) {
+			String dId = line[2];
+			context.write(new Text(dId), ONE);
 		}
 	}
-{ % endhighlight %}
+}
+{% endhighlight %}
 
 
 这个Mapper的子类覆盖了map函数，将字符串用,号拆开后，取出第三个元素作为设备ID, 然后作为key写入context对象。
@@ -132,28 +131,28 @@ write方法不是一般概念的hasmap添加key,value，而是生成一个新的
 ##六、编写简单reducer
 Reduce就是做加和统计，在com.shiyanlou.mapreduce包下新建一个名为LogReducer的类，代码：
 {% highlight java %}
-	package com.shiyanlou.mapreduce;
-	
-	import java.io.IOException;
-	
-	import org.apache.hadoop.io.IntWritable;
-	import org.apache.hadoop.mapreduce.Reducer;
-	
-	public class LogReducer&lt;Key&gt; extends
-			Reducer&lt;Key, IntWritable, Key, IntWritable&gt; {
-		private IntWritable result = new IntWritable();
-	
-		public void reduce(Key key, Iterable&lt;IntWritable&gt; values, Context context)
-				throws IOException, InterruptedException {
-			int sum = 0;
-			for (IntWritable val : values) {
-				sum += val.get();
-			}
-			result.set(sum);
-			context.write(key, result);
+package com.shiyanlou.mapreduce;
+
+import java.io.IOException;
+
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class LogReducer&lt;Key&gt; extends
+		Reducer&lt;Key, IntWritable, Key, IntWritable&gt; {
+	private IntWritable result = new IntWritable();
+
+	public void reduce(Key key, Iterable&lt;IntWritable&gt; values, Context context)
+			throws IOException, InterruptedException {
+		int sum = 0;
+		for (IntWritable val : values) {
+			sum += val.get();
 		}
+		result.set(sum);
+		context.write(key, result);
 	}
-{ % endhighlight %}
+}
+{% endhighlight %}
 
 这里框架保证在调用reduce方法之前，相同的key的value已经被放在values中，从而组成一个pair &lt; key, values&gt;，这些pair之间也已经用key做了排序。
 
@@ -164,36 +163,36 @@ Reduce就是做加和统计，在com.shiyanlou.mapreduce包下新建一个名为
 
 最后，在com.shiyanlou.mapreduce包下新建一个名为LogJob的类，将初始环境设置好。
 {% highlight java %}
-	package com.shiyanlou.mapreduce;
-	
-	import org.apache.hadoop.conf.Configuration;
-	import org.apache.hadoop.fs.Path;
-	import org.apache.hadoop.io.IntWritable;
-	import org.apache.hadoop.io.Text;
-	import org.apache.hadoop.mapreduce.Job;
-	import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-	import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-	
-	public class LogJob {
-	
-		public static void main(String[] args) throws Exception {
-			Configuration conf = new Configuration();
-			Job job = Job.getInstance(conf, &#34;sum_did_from_log_file&#34;);
-			job.setJarByClass(LogJob.class);
-	
-			job.setMapperClass(LogMapper.class);
-			job.setCombinerClass(LogReducer.class);
-			job.setReducerClass(LogReducer.class);
-	
-			job.setOutputKeyClass(Text.class);
-			job.setOutputValueClass(IntWritable.class);
-	
-			FileInputFormat.addInputPath(job, new Path(args[0]));
-			FileOutputFormat.setOutputPath(job, new Path(args[1]));
-	
-			System.exit(job.waitForCompletion(true) ? 0 : 1);
-		}
+package com.shiyanlou.mapreduce;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+public class LogJob {
+
+	public static void main(String[] args) throws Exception {
+		Configuration conf = new Configuration();
+		Job job = Job.getInstance(conf, &#34;sum_did_from_log_file&#34;);
+		job.setJarByClass(LogJob.class);
+
+		job.setMapperClass(LogMapper.class);
+		job.setCombinerClass(LogReducer.class);
+		job.setReducerClass(LogReducer.class);
+
+		job.setOutputKeyClass(Text.class);
+		job.setOutputValueClass(IntWritable.class);
+
+		FileInputFormat.addInputPath(job, new Path(args[0]));
+		FileOutputFormat.setOutputPath(job, new Path(args[1]));
+
+		System.exit(job.waitForCompletion(true) ? 0 : 1);
 	}
+}
 {% endhighlight %}
 
 ##七、MapReduce例子程序运行
