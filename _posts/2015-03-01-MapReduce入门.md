@@ -4,7 +4,7 @@ title:  MapReduce快速入门
 description: "MapReduce快速入门"
 category: project
 avatarimg: "/img/touxiang.jpg"
-tags : [apue,Hadoop]
+tags : [Hadoop,Mapreduce]
 duoshuo: true
 ---
 ##一、MapReduce介绍

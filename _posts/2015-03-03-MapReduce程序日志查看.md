@@ -4,7 +4,7 @@ title:  MapReduce程序日志查看
 description: "MapReduce程序日志查看"
 category: project
 avatarimg: "/img/touxiang.jpg"
-tags : [apue,Hadoop]
+tags : [Hadoop,Mapreduce]
 duoshuo: true
 ---
 
