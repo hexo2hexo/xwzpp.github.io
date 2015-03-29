@@ -108,12 +108,12 @@ http://stackoverflow.com/questions/7598422/is-it-better-to-use-the-mapred-or-the
 	import org.apache.hadoop.io.Text;
 	import org.apache.hadoop.mapreduce.Mapper;
 	
-	public class LogMapper extends Mapper&lt;Object, Text, Text, IntWritable&gt; {
+	public class LogMapper extends Mapper<Object, Text, Text, IntWritable> {
 		private final static IntWritable ONE = new IntWritable(1);
 	
 		public void map(Object key, Text value, Context context)
 				throws IOException, InterruptedException {
-			String[] line = value.toString().split(&#34;,&#34;);
+			String[] line = value.toString().split(",");
 			if (line.length == 4) {
 				String dId = line[2];
 				context.write(new Text(dId), ONE);
@@ -141,11 +141,11 @@ Reduce就是做加和统计，在com.shiyanlou.mapreduce包下新建一个名为
 	import org.apache.hadoop.io.IntWritable;
 	import org.apache.hadoop.mapreduce.Reducer;
 	
-	public class LogReducer&lt;Key&gt; extends
-			Reducer&lt;Key, IntWritable, Key, IntWritable&gt; {
+	public class LogReducer extends
+			Reducer<Text, IntWritable, Text, IntWritable> {
 		private IntWritable result = new IntWritable();
 	
-		public void reduce(Key key, Iterable&lt;IntWritable&gt; values, Context context)
+		public void reduce(Text key, Iterable<IntWritable> values, Context context)
 				throws IOException, InterruptedException {
 			int sum = 0;
 			for (IntWritable val : values) {
