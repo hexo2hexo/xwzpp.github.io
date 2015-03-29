@@ -8,10 +8,10 @@ tags : [apue,Hadoop]
 duoshuo: true
 ---
 
-<!-- more -->
-
 ##一、MapReduce介绍
 MapReduce是一种编程模型，用于大规模数据集（大于1TB）的并行运算。概念&#34;Map（映射）&#34;和&#34;Reduce（归约）&#34;，和他们的主要思想，都是从函数式编程语言里借来的，还有从矢量编程语言里借来的特性。他极大地方便了编程人员在不会分布式并行编程的情况下，将自己的程序运行在分布式系统上。 当前的软件实现是指定一个Map（映射）函数，用来把一组键值对映射成一组新的键值对，指定并发的Reduce（归约）函数，用来保证所有映射的键值对中的每一个共享相同的键组。
+
+<!-- more -->
 
 ##二、搭建MapReduce工程
 使用Eclipse创建一个名为MapReduce1的Java Project，在MapReduce1下创建一个名为lib的文件夹，放入hadoop-core-1.2.1.jar（在主文件夹下的Downloads/hadoop-1.2.1文件夹下），并把它添加到Build Path，最后在src下创建一个com.shiyanlou.mapreduce的包。
