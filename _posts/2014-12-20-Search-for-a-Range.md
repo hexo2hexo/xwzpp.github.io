@@ -4,7 +4,7 @@ title:  LeetCode-Search for a Range
 description: "Search for a Range"
 category: algorithm
 avatarimg: "/img/leet-code/touxiang.png"
-tags : [leetcode,Arrays，Binary Search]
+tags : [leetcode,Arrays,Binary Search]
 duoshuo: true
 ---
 ##题目

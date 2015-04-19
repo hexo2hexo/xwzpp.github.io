@@ -4,7 +4,7 @@ title:  LeetCode-Sudoku Solver
 description: "Sudoku Solver"
 category: algorithm
 avatarimg: "/img/leet-code/touxiang.png"
-tags : [leetcode,Hash Table，Backtracking]
+tags : [leetcode,Hash Table,Backtracking]
 duoshuo: true
 ---
 ##题目

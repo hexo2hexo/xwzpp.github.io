@@ -4,7 +4,7 @@ title:  LeetCode-Search in Rotated Sorted Array
 description: "Search in Rotated Sorted Array"
 category: algorithm
 avatarimg: "/img/leet-code/touxiang.png"
-tags : [leetcode,Arrays，Binary Search]
+tags : [leetcode,Arrays,Binary Search]
 duoshuo: true
 ---
 ##题目
