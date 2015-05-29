@@ -130,27 +130,6 @@ public class WordDictionary {
 			return false;
     	}
 
-    	// for(int i=start;i<word.length();i++){
-    	// 	if(word.charAt(i)!='.'){
-    	// 		TrieNode node=current.subNode(word.charAt(i));
-    	// 		if(node!=null){
-    	// 			current=node;
-    	// 		}else{
-    	// 			return false;
-    	// 		}
-    	// 	}else{
-    	// 		//表示为'.'则需要一个一个尝试了，进行深度优先搜索
-    	// 		LinkedList<TrieNode> cls=current.children;
-    	// 		if(cls==null) return false;
-    	// 		for(TrieNode c:cls)
-    	// 		{
-    	// 			boolean re=helper(c,word,i+1);
-    	// 			if(re==true)
-    	// 				return true;
-    	// 		}
-    	// 		return false;
-    	// 	}
-    	// }
     }
 }
 
