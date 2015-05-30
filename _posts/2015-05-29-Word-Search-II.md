@@ -98,11 +98,14 @@ public class Solution {
 
 通过构建trie树进行优化的方法
 {% highlight java %}
+//优化的方法
 public class Solution {
     public ArrayList<String> findWords(char[][] board, String[] words) {
-    	ArrayList<String> result=new ArrayList<String>();
-        if(words==null || words.length==0) return result;
-        if(board==null || board.length==0 || board[0].length==0) return result;
+         //这边设定一个hashset，防止一个单词被重复的加入
+        ArrayList<String> re=new ArrayList<String>();
+    	HashSet<String> result=new HashSet<String>();
+        if(words==null || words.length==0) return re;
+        if(board==null || board.length==0 || board[0].length==0) return re;
 
         Trie tr=new Trie();
         for(String word:words){
@@ -114,11 +117,14 @@ public class Solution {
                 search(board, used, tr, i, j, new StringBuilder(), result);  
             }  
         }  
-        return result;
+       
+        for(String hs:result)
+          re.add(hs);
+        return re;
    }
 
    //sb中记录深度过程中访问过的节点，然后便于前缀搜索
-   public void search(char[][] board,boolean[][] used,Trie tr,int i,int j,StringBuilder sb,ArrayList<String> re){
+   public void search(char[][] board,boolean[][] used,Trie tr,int i,int j,StringBuilder sb,HashSet<String> re){
    		if(i<0 || j<0 || i>=board.length || j>=board[0].length || used[i][j]) return;
 
    		used[i][j]=true;
