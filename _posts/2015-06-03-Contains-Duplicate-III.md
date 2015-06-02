@@ -14,7 +14,9 @@ duoshuo: true
 <!-- more -->
 	
 ##解题思路
-维持一个长度为k的window, 每次检查新的值是否与原来窗口中的所有值的差值有小于等于t的. 如果用两个for循环会超时O(nk). 使用treeset( backed by binary search tree) 的subSet函数,可以快速搜索. 复杂度为 O(n logk)
+该题与[Contains Duplicate][1]和[Contains Duplicate II][2]都不相同，这题主要考察的是两个元素之间的关系。最先想到的思路就是，维持一个长度为k的window, 每次检查新的值是否与原来窗口中的所有值的差值有小于等于t.但是这种方法的时间复杂度为O(nk)，会造成超时。因此需要进行优化。
+参考[这篇文章解法][3],发现其使用treeset来存储元素，以达到快速查找元素只差是否小于t的情况，这样时间复杂度为O(nlogk). 
+
 
 ##算法代码
 代码采用JAVA实现：
@@ -22,9 +24,8 @@ duoshuo: true
 import java.util.SortedSet;  
   
 public class Solution {  
-    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {  
-        //input check  
-        if(k<1 || t<0 || nums==null || nums.length<2) return false;  
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {    
+        if(k<1 || t<0 || nums==null) return false;  
           
         SortedSet<Long> set = new TreeSet<Long>();  
           
@@ -41,6 +42,10 @@ public class Solution {
     }  
 }  
 {% endhighlight %}
+
+[1]:http://pisxw.com/algorithm/Contains-Duplicate.html
+[2]:http://pisxw.com/algorithm/Contains-Duplicate-II.html
+[3]:http://blog.csdn.net/xudli/article/details/46323247
 
 
 
