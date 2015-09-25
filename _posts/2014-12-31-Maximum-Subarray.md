@@ -22,12 +22,12 @@ If you have figured out the O(n) solution, try coding another solution using the
 ##解题思路
 该题是典型的动态规划求解，可以定义局部最优和全局最优
 
-	定义dp[i]:以i为结尾的最大连续字符串长度  局部最优
+	定义dp[i]:以i为结尾的最大连续字符串之和  局部最优
 	dp[i]=max(dp[i-1]+A[i],A[i]) //需要考虑dp[i-1]是负的情况，这时候就不需要加上它了
 
-	这样遍历之后将会得到所有节点，以其为结尾的最大连续字符串长度。此时可以定义全局最优
+	这样遍历之后将会得到所有节点，以其为结尾的最大连续字符串之和。此时可以定义全局最优
 
-	定义dpglobal[i]：从0到i节点中最长连续字串长度  全局最优
+	定义dpglobal[i]：从0到i节点中最长连续字串之和  全局最优
 	dpglobal[i]=max(dpglobal[i-1],dp[i]);
 
 ##算法代码
@@ -37,9 +37,9 @@ public class Solution {
     public int maxSubArray(int[] A) {
         if(A==null || A.length==0)
         	return 0;
-        //dp[i]表示以i为结尾的最大连续字串长度  局部最优
+        //dp[i]表示以i为结尾的最大连续字串之和  局部最优
         int[] dp=new int[A.length]; 
-        //dpglobal[i]表示从0到i节点中最长连续字串长度  全局最优
+        //dpglobal[i]表示从0到i节点中最长连续字串之和  全局最优
        	int[] dpglobal=new int[A.length];
        	dp[0]=A[0];
        	dpglobal[0]=A[0];
