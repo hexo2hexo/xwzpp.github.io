@@ -27,7 +27,7 @@ d. spill阶段（包含combiner)
   如果缓冲区写满到一定程度，就会进入spill阶段往本地磁盘上写临时文件。
   首先会将需要spill的数据按照partition排序，每个partition的数据又按照key进行排序。
   然后按照partition的增序写到本地磁盘临时output/spillN.out， N表示spill的次数。如果自定义了combiner，就在这个阶段被调用用来对数据再做一次聚集操作。
-e. merge阶段
+e. merge阶段 
  将所有临时文件合并成一个文件，供reduce阶段使用。
 
 + MapOutputBuffer
