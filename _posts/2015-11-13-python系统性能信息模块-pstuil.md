@@ -30,7 +30,7 @@ psutil的下载网址为:[下载网址][1]。然后选择`psutil-3.2.2.tar.gz`�
 
 ```
 import psutil  
-print psutil.virtual\_memory()
+print psutil.virtual_memory()
 ```
 
 ## 二. 系统性能信息
@@ -39,16 +39,16 @@ psutil模块已经分装了系统性能信息的方法，主要分为以下几�
 
 ```
 # 获取CPU完整信息  
-print psutil.cpu\_times()  
+print psutil.cpu_times()  
 
 # 获取单项数据信息,如user的CPU时间比  
-print psutil.cpu\_times().user  
+print psutil.cpu_times().user  
 
 # 获取cpu的逻辑个数  
-print psutil.cpu\_count()  
+print psutil.cpu_count()  
 
 # 获取cpu的物理个数  
-print psutil.cpu\_count(logical=False)
+print psutil.cpu_count(logical=False)
 ```
 
 #### 内存
