@@ -26,8 +26,8 @@ psutil的下载网址为:[下载网址][1]。然后选择`psutil-3.2.2.tar.gz`�
 
 #### psutil的基本使用
 首先需要进行模块的导入，然后就可以进行使用了，具体事例如下：
-	import psutil
-	print psutil.virtual_memory()
+import psutil
+print psutil.virtual_memory()
 
 
 
